@@ -1,0 +1,4 @@
+Eat Breakfast,7
+Finish homework,10
+Read a book,2
+Wash the dishes,2
