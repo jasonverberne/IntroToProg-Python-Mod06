@@ -7,6 +7,7 @@
 # ChangeLog (Who,When,What):
 # RRoot,1.1.2030,Created started script
 # Jason Verberne,11/19/2022,Modified code to complete assignment 06
+# Jason Verberne,11/21/2022,Added comments
 # ---------------------------------------------------------------------------- #
 
 # Data ---------------------------------------------------------------------- #
@@ -49,7 +50,7 @@ class Processor:
         :return: (list) of dictionary rows
         """
         row = {"Task": str(task).strip(), "Priority": str(priority).strip()}
-        list_of_rows.append(row) # TODO: Add Code Here!
+        list_of_rows.append(row) # Jason added code - appends row to list of rows
         return list_of_rows
 
     @staticmethod
@@ -60,11 +61,11 @@ class Processor:
         :param list_of_rows: (list) you want filled with file data:
         :return: (list) of dictionary rows
         """
-        count = 0
-        for row in list_of_rows:
-            if task == row["Task"]:
-                list_of_rows.pop(count)
-            count += 1 # TODO: Add Code Here!
+        count = 0 # Jason added code - (int) used with pop to remove unwanted task
+        for row in list_of_rows: # Jason added code - loops through rows to identify unwanted task to remove
+            if task == row["Task"]: # Jason added code
+                list_of_rows.pop(count) # Jason added code
+            count += 1 # Jason added code
         return list_of_rows
 
     @staticmethod
@@ -75,12 +76,11 @@ class Processor:
         :param list_of_rows: (list) you want filled with file data:
         :return: (list) of dictionary rows
         """
-        file = open(file_name, "w")
-        for row in list_of_rows:
-            file.write(row["Task"] + "," + row["Priority"] + "\n")
-        file.close()
+        file = open(file_name, "w") # Jason added code - opens file to write data to file
+        for row in list_of_rows: # Jason added code - loops through list_of_rows to write each existing row to file
+            file.write(row["Task"] + "," + row["Priority"] + "\n") # Jason added code -
+        file.close() # Jason added code - closes file
 
-        # TODO: Add Code Here!
         return list_of_rows
 
 
@@ -134,10 +134,9 @@ class IO:
 
         :return: (string, string) with task and priority
         """
-        task = input("Please enter the new task: ")
-        priority = input("Please enter the tasks priority: ")
-        return task, priority
-        # TODO: Add Code Here!
+        task = input("Please enter the new task: ") # Jason added code - (string) gathers task from user
+        priority = input("Please enter the tasks priority: ") # Jason added code - (string) gathers priority for task
+        return task, priority # Jason added code - packs to tuple
 
     @staticmethod
     def input_task_to_remove():
@@ -145,8 +144,8 @@ class IO:
 
         :return: (string) with task
         """
-        task = input("What task would you like to remove: ")
-        return task # TODO: Add Code Here!
+        task = input("What task would you like to remove: ") # Jason added code - (string) gathers task from user
+        return task # Jason added code - returns task
 
 
 # Main Body of Script  ------------------------------------------------------ #
